@@ -7,11 +7,25 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+  	container: {
+  		center: true,
+  		padding: "2rem",
+  		screens: {
+  			"2xl": "1400px",
+  		},
+  	},
   	extend: {
   		fontFamily: {
   			faculty: ["Faculty Glyphic", "sans-serif"]
   		},
   		colors: {
+  			border: "hsl(var(--border))",
+  			background: "hsl(var(--background))",
+  			foreground: "hsl(var(--foreground))",
+  			primary: {
+  				DEFAULT: "hsl(var(--primary))",
+  				foreground: "hsl(var(--primary-foreground))",
+  			},
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',
   				foreground: 'hsl(var(--sidebar-foreground))',
@@ -25,5 +39,5 @@ module.exports = {
   		}
   	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
