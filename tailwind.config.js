@@ -9,7 +9,7 @@ module.exports = {
   theme: {
   	extend: {
   		fontFamily: {
-  			faculty: ['Faculty Glyphic"', 'sans-serif']
+  			faculty: ["Faculty Glyphic", "sans-serif"]
   		},
   		colors: {
   			sidebar: {
