@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
+      
       <body className="font-faculty antialiased">
         {children}
       </body>
