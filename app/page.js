@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, BookOpen, Award, BarChart3 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams";
 
 export default function Home() {
@@ -19,13 +20,42 @@ export default function Home() {
           >
             DYPCOE Attainment
           </motion.div>
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="px-6 py-2 rounded-full bg-purple-600/80 text-white hover:bg-purple-700/80 transition-colors"
-          >
-            Sign Up
-          </motion.button>
+          <div className="flex gap-4">
+            {/* User Actions */}
+            <div className="flex gap-2">
+              <Link href="/login">
+                <motion.button
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="px-6 py-2 rounded-full bg-transparent border border-purple-600/80 text-white hover:bg-purple-600/20 transition-colors"
+                >
+                  Login
+                </motion.button>
+              </Link>
+              <Link href="/signup">
+                <motion.button
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="px-6 py-2 rounded-full bg-purple-600/80 text-white hover:bg-purple-700/80 transition-colors"
+                >
+                  Sign Up
+                </motion.button>
+              </Link>
+            </div>
+
+            {/* Admin Login Only */}
+            <div className="flex gap-2">
+              <Link href="/admin/login">
+                <motion.button
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="px-6 py-2 rounded-full bg-transparent border border-red-600/80 text-white hover:bg-red-600/20 transition-colors"
+                >
+                  Admin Portal
+                </motion.button>
+              </Link>
+            </div>
+          </div>
         </div>
       </nav>
 
