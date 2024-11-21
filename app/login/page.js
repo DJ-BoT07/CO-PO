@@ -74,7 +74,7 @@ const Login = () => {
         {message && <p className={styles.message}>{message}</p>}
         
         <div className={styles.linkText}>
-          <p>Don't have an account?
+          <p>Don&apos;t have an account?
             <Link href="/signup">
               <span className={styles.link}>Sign Up</span>
             </Link>

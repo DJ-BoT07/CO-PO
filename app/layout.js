@@ -1,4 +1,7 @@
 import "./globals.css";
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: "DYPCOE Attainment Mapping",
@@ -7,16 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" 
-          rel="stylesheet"
-        />
-      </head>
-      
+    <html lang="en" className={inter.className}>
       <body className="font-faculty antialiased">
         {children}
       </body>
