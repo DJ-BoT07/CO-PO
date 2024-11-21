@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { BarChart3, Users, BookOpen, Award } from "lucide-react";
+import { UserProfile } from "@/components/ui/userProfile";
 
 export default function Dashboard() {
   const stats = [
@@ -38,6 +39,9 @@ export default function Dashboard() {
           Generate Report
         </button>
       </div>
+
+      {/* User Profile Section */}
+      <UserProfile />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

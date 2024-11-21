@@ -4,10 +4,18 @@ import { ChevronRight, BookOpen, Award, BarChart3 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams";
-import Link from 'next/link'
+import { isUserLoggedIn } from "@/utils/authHelper";
 
 export default function Home() {
   const router = useRouter();
+
+  const handleDashboardClick = () => {
+    if (isUserLoggedIn()) {
+      router.push('/dashboard');
+    } else {
+      router.push('/login');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-black">
@@ -21,13 +29,32 @@ export default function Home() {
           >
             DYPCOE Attainment
           </motion.div>
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="px-6 py-2 rounded-full bg-purple-600/80 text-white hover:bg-purple-700/80 transition-colors"
-          >
-            Sign Up
-          </motion.button>
+          <div className="flex items-center gap-4">
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              onClick={() => router.push('/login')}
+              className="px-6 py-2 rounded-full bg-transparent text-white hover:bg-purple-600/20 transition-colors border border-purple-500"
+            >
+              Login
+            </motion.button>
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              onClick={() => router.push('/signup')}
+              className="px-6 py-2 rounded-full bg-purple-600/80 text-white hover:bg-purple-700/80 transition-colors"
+            >
+              Sign Up
+            </motion.button>
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              onClick={() => router.push('/admin/login')}
+              className="px-6 py-2 rounded-full bg-red-600/80 text-white hover:bg-red-700/80 transition-colors"
+            >
+              Admin Portal
+            </motion.button>
+          </div>
         </div>
       </nav>
 
@@ -53,7 +80,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => router.push('/dashboard')}
+                onClick={handleDashboardClick}
                 className="px-8 py-4 rounded-full bg-purple-600/80 text-white hover:bg-purple-700/80 transition-colors flex items-center gap-2 mx-auto text-lg"
               >
                 Go to Dashboard

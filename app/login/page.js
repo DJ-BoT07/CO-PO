@@ -3,10 +3,12 @@
 import { useState } from "react";
 import { login } from "../../services/auth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams";
 import styles from '../styles/auth.module.css';
 
 const Login = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -21,7 +23,10 @@ const Login = () => {
         throw new Error('Please use admin portal to login as admin.');
       }
       setMessage("Logged in successfully!");
-      // Redirect to user dashboard
+      // Redirect to home page after successful login
+      setTimeout(() => {
+        router.push('/');
+      }, 1500); // Short delay to show success message
     } catch (error) {
       setMessage(`Error: ${error.message}`);
     }
