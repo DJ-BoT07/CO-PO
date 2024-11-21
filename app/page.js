@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronRight, BookOpen, Award, BarChart3 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams";
+import Link from 'next/link'
 
 export default function Home() {
   const router = useRouter();
@@ -24,7 +25,7 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             className="px-6 py-2 rounded-full bg-purple-600/80 text-white hover:bg-purple-700/80 transition-colors"
           >
-            Sign Up
+            <Link href="/signup">Sign Up</Link>
           </motion.button>
         </div>
       </nav>
