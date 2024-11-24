@@ -1,0 +1,3 @@
+1.In the main page.jsx for checking the database setup, direct to /teachers using next/link just add a basic code!!! 
+2. After that fill the form details and wait for a few seconds
+3.Finally alert will displayed records inserted successfully

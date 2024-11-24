@@ -1,5 +1,5 @@
 {
-  "id": "104c84e4-45ef-4f1f-9c92-52757764adb1",
+  "id": "d16917af-61fa-4db6-bfe2-829ccad1d066",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -23,7 +23,7 @@
         },
         "year": {
           "name": "year",
-          "type": "integer",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": true
         },
